@@ -1,0 +1,94 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Lista de odontólogos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/get_all_dentist.js"></script>
+    <script type="text/javascript" src="/js/delete_dentist.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Inicio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Gestión de Dentistas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/get_all_dentist.html">Listar odontólogos</a>
+                    <a class="dropdown-item" href="/post_dentist.html">Agregar odontólogo</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Gestión de Pacientes
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                    <a class="dropdown-item" href="/get_all_patient.html">Listar pacientes</a>
+                    <a class="dropdown-item" href="/post_patient.html">Agregar pacientes</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Gestión de Turnos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                    <a class="dropdown-item" href="/get_all_turn.html">Listar turnos</a>
+                    <a class="dropdown-item" href="/post_turn.html">Agregar turnos</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
+            <h3>Agregar Turno</h3>
+            <form id="add_new_turn">
+                <div class="form-group">
+                    <label for="dentistFormControlSelect1">Odontologo select</label>
+                    <select class="form-control" id="dentistFormControlSelect1">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="patientFormControlSelect1">Paciente select</label>
+                    <select class="form-control" id="patientFormControlSelect1">
+                        <option></option>
+                    </select>
+                </div>
+
+                <form method="post" action="">
+                    Event: <input type="text" name="event_name" class="form-control">
+                    Date & Time: <input size="16" type="text" name="event_datetime" class="form-control" id="form_datetime" readonly>
+                    <input type="submit" name="submit" class="btn button btn-success" value="SUBMIT" />
+                </form>
+
+
+                <button type="submit" class="btn btn-primary"
+                        id="btn-add-new-turn">Guardar</button>
+            </form>
+            <div id="response" style="display:none; margin-top:10px">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
