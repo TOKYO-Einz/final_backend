@@ -2,6 +2,7 @@ package com.rodrigopisati.Final_backend.services.imp;
 
 
 import com.rodrigopisati.Final_backend.entities.Dentist;
+import com.rodrigopisati.Final_backend.entities.Patient;
 import com.rodrigopisati.Final_backend.exceptions.BadRequestException;
 import com.rodrigopisati.Final_backend.exceptions.ResourceNotFoundException;
 import com.rodrigopisati.Final_backend.services.DentistService;
@@ -26,7 +27,7 @@ public class DentistServiceImp {
     public Optional<Dentist> searchDentist(Long id) {return repository.findById(id);}
 
 
-    public Dentist saveDentist(Dentist dentist) { return (Dentist) repository.save(dentist);}
+    public  Dentist saveDentist(Dentist dentist) { return repository.save(dentist);}
 
 
     public Dentist updateDentist(Dentist dentist) throws BadRequestException {

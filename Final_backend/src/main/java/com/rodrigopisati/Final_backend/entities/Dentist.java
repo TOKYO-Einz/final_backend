@@ -57,4 +57,7 @@ public class Dentist {
         this.lastname = lastname;
         this.registration = registration;
     }
+
+
+    
 }

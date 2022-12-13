@@ -5,6 +5,8 @@ import com.rodrigopisati.Final_backend.entities.Address;
 import com.rodrigopisati.Final_backend.exceptions.BadRequestException;
 import com.rodrigopisati.Final_backend.exceptions.ResourceNotFoundException;
 import com.rodrigopisati.Final_backend.services.AddressService;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +30,7 @@ public class AddressServiceImp {
     public List<Address> listAddress(Address address) { return repository.findAll();}
 
 
-    public Address registerAddress(Address address) { return (Address) repository.save(address);}
+    public  Address saveAddress(Address address) { return (Address) repository.save(address);}
 
 
     public void deleteAddress( Long id) throws ResourceNotFoundException {
